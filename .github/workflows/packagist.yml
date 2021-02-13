@@ -13,6 +13,6 @@ jobs:
       - name: "Send Webhook"
         uses: fjogeleit/http-request-action@master
         with:
-          url: 'https://packagist.org/api/update-package?username=mnavarrocarter&apiToken=${PACKAGIST_API_TOKEN}'
+          url: 'https://packagist.org/api/update-package?username=mnavarrocarter&apiToken=${{secrets.PACKAGIST_API_TOKEN}}'
           method: 'POST'
           data: '{"repository":{"url":"https://packagist.org/packages/legatus/auth"}}'
