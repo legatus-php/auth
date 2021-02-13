@@ -1,0 +1,32 @@
+name: "Packagist"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  packagist-webhook:
+    name: "Process Packagist Webhook"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Output composer.json file"
+        id: composer
+        run: |
+          content=`cat composer.json`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=composerJson::$content"
+      - name: "Extract package name"
+        id: package
+        run: |
+          echo "${{fromJson(steps.composer.outputs.composerJson).name}}"
+      - name: "Send Webhook"
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://packagist.org/api/update-package?username=mnavarrocarter&apiToken=${PACKAGIST_API_TOKEN}'
+          method: 'POST'
+          body: '{"repository":{"url":"https://packagist.org/packages/${steps.package.outputs}"}}'
