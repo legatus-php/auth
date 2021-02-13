@@ -15,4 +15,4 @@ jobs:
         with:
           url: 'https://packagist.org/api/update-package?username=mnavarrocarter&apiToken=${PACKAGIST_API_TOKEN}'
           method: 'POST'
-          body: '{"repository":{"url":"https://packagist.org/packages/legatus/auth"}}'
+          data: '{"repository":{"url":"https://packagist.org/packages/legatus/auth"}}'
