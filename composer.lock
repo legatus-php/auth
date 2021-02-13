@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b4e4d4f7d91edbd2ddcb003fbfde6d4",
+    "content-hash": "3b6eff592bdb2fd3455002407e667774",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -139,6 +139,182 @@
                 "source": "https://github.com/dflydev/dflydev-fig-cookies/tree/v2.0.3"
             },
             "time": "2020-12-07T16:40:59+00:00"
+        },
+        {
+            "name": "lcobucci/clock",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lcobucci/clock.git",
+                "reference": "fa02578087595043169e9f898d048802da510105"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lcobucci/clock/zipball/fa02578087595043169e9f898d048802da510105",
+                "reference": "fa02578087595043169e9f898d048802da510105",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.17",
+                "lcobucci/coding-standard": "^6.0",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-deprecation-rules": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lcobucci\\Clock\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Cobucci",
+                    "email": "lcobucci@gmail.com"
+                }
+            ],
+            "description": "Yet another clock abstraction",
+            "support": {
+                "issues": "https://github.com/lcobucci/clock/issues",
+                "source": "https://github.com/lcobucci/clock/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lcobucci",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/lcobucci",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-08-27T17:13:08+00:00"
+        },
+        {
+            "name": "legatus/crypto",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/legatus-php/crypto.git",
+                "reference": "919a42a18207da6a8959888cbe4a002c0d3ca190"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/legatus-php/crypto/zipball/919a42a18207da6a8959888cbe4a002c0d3ca190",
+                "reference": "919a42a18207da6a8959888cbe4a002c0d3ca190",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-sodium": "*",
+                "lcobucci/clock": "^1.3",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "adlawson/vfs": "^0.12.1",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Legatus\\Support\\": [
+                        "src/cipher",
+                        "src/key",
+                        "src/rand",
+                        "src/token"
+                    ]
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matias Navarro Carter",
+                    "email": "contact@mnavarro.dev"
+                }
+            ],
+            "description": "Simple and secure cryptographic implementations for common tasks",
+            "support": {
+                "issues": "https://github.com/legatus-php/crypto/issues",
+                "source": "https://github.com/legatus-php/crypto/tree/0.3.1"
+            },
+            "time": "2020-12-29T20:25:46+00:00"
+        },
+        {
+            "name": "legatus/session",
+            "version": "0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/legatus-php/session.git",
+                "reference": "2fcc8207a9b4a161e37161d5b1a722bc682b823f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/legatus-php/session/zipball/2fcc8207a9b4a161e37161d5b1a722bc682b823f",
+                "reference": "2fcc8207a9b4a161e37161d5b1a722bc682b823f",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/fig-cookies": "^2.0|^3.0",
+                "legatus/crypto": "^0.3.0",
+                "php": ">=7.4",
+                "psr/http-server-middleware": "^1.0"
+            },
+            "require-dev": {
+                "adlawson/vfs": "^0.12.1",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Legatus\\Http\\": [
+                        "src/session",
+                        "src/middleware",
+                        "src/store",
+                        "src/cookie"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matias Navarro Carter",
+                    "email": "contact@mnavarro.dev"
+                }
+            ],
+            "description": "Session handling for PSR-7 applications",
+            "support": {
+                "issues": "https://github.com/legatus-php/session/issues",
+                "source": "https://github.com/legatus-php/session/tree/0.3.2"
+            },
+            "time": "2021-02-13T16:46:57+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1273,182 +1449,6 @@
                 }
             ],
             "time": "2021-01-26T00:22:21+00:00"
-        },
-        {
-            "name": "lcobucci/clock",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lcobucci/clock.git",
-                "reference": "fa02578087595043169e9f898d048802da510105"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/clock/zipball/fa02578087595043169e9f898d048802da510105",
-                "reference": "fa02578087595043169e9f898d048802da510105",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "infection/infection": "^0.17",
-                "lcobucci/coding-standard": "^6.0",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.12",
-                "phpstan/phpstan-deprecation-rules": "^0.12",
-                "phpstan/phpstan-phpunit": "^0.12",
-                "phpstan/phpstan-strict-rules": "^0.12",
-                "phpunit/phpunit": "^9.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lcobucci\\Clock\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Luís Cobucci",
-                    "email": "lcobucci@gmail.com"
-                }
-            ],
-            "description": "Yet another clock abstraction",
-            "support": {
-                "issues": "https://github.com/lcobucci/clock/issues",
-                "source": "https://github.com/lcobucci/clock/tree/master"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/lcobucci",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/lcobucci",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-08-27T17:13:08+00:00"
-        },
-        {
-            "name": "legatus/crypto",
-            "version": "0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/legatus-php/crypto.git",
-                "reference": "919a42a18207da6a8959888cbe4a002c0d3ca190"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/legatus-php/crypto/zipball/919a42a18207da6a8959888cbe4a002c0d3ca190",
-                "reference": "919a42a18207da6a8959888cbe4a002c0d3ca190",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-sodium": "*",
-                "lcobucci/clock": "^1.3",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "adlawson/vfs": "^0.12.1",
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^9.0",
-                "vimeo/psalm": "^3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Legatus\\Support\\": [
-                        "src/cipher",
-                        "src/key",
-                        "src/rand",
-                        "src/token"
-                    ]
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matias Navarro Carter",
-                    "email": "contact@mnavarro.dev"
-                }
-            ],
-            "description": "Simple and secure cryptographic implementations for common tasks",
-            "support": {
-                "issues": "https://github.com/legatus-php/crypto/issues",
-                "source": "https://github.com/legatus-php/crypto/tree/0.3.1"
-            },
-            "time": "2020-12-29T20:25:46+00:00"
-        },
-        {
-            "name": "legatus/session",
-            "version": "0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/legatus-php/session.git",
-                "reference": "1e42b258eac14019e037d431791a015f6e7a69eb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/legatus-php/session/zipball/1e42b258eac14019e037d431791a015f6e7a69eb",
-                "reference": "1e42b258eac14019e037d431791a015f6e7a69eb",
-                "shasum": ""
-            },
-            "require": {
-                "dflydev/fig-cookies": "^2.0",
-                "legatus/crypto": "^0.3.0",
-                "php": ">=7.4",
-                "psr/http-server-middleware": "^1.0"
-            },
-            "require-dev": {
-                "adlawson/vfs": "^0.12.1",
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^9.0",
-                "vimeo/psalm": "^3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Legatus\\Http\\": [
-                        "src/session",
-                        "src/middleware",
-                        "src/store",
-                        "src/cookie"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matias Navarro Carter",
-                    "email": "contact@mnavarro.dev"
-                }
-            ],
-            "description": "Session handling for PSR-7 applications",
-            "support": {
-                "issues": "https://github.com/legatus-php/session/issues",
-                "source": "https://github.com/legatus-php/session/tree/0.3.1"
-            },
-            "time": "2020-12-29T20:27:05+00:00"
         },
         {
             "name": "myclabs/deep-copy",

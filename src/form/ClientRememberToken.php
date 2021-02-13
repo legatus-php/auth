@@ -20,7 +20,7 @@ namespace Legatus\Http;
  * Class ClientRememberToken models information received from the client about a
  * remember token.
  */
-final class ClientRememberToken implements Credentials
+class ClientRememberToken implements Credentials
 {
     private string $tokenId;
     private string $validator;

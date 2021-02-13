@@ -43,6 +43,11 @@ final class ChainCredentialsExtractor implements CredentialExtractor
         $this->extractors = $extractors;
     }
 
+    public function push(CredentialExtractor $extractor): void
+    {
+        $this->extractors[] = $extractor;
+    }
+
     /**
      * @param Request $request
      *

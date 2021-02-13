@@ -131,4 +131,13 @@ final class SessionAuthenticator implements CredentialExtractor, IdentityProvide
         $session = SessionContext::from($request);
         $session->put($this->attributeName, $identity->toString());
     }
+
+    /**
+     * @param Request $request
+     */
+    public function removeSessionAttribute(Request $request): void
+    {
+        $session = SessionContext::from($request);
+        $session->remove($this->attributeName);
+    }
 }

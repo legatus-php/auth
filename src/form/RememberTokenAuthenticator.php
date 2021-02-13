@@ -42,6 +42,7 @@ final class RememberTokenAuthenticator implements CredentialExtractor, IdentityP
     private bool $secure;
     private bool $httpOnly;
     private string $sameSite;
+    private string $path;
 
     /**
      * RememberTokenCredentialsExtractor constructor.
@@ -52,7 +53,8 @@ final class RememberTokenAuthenticator implements CredentialExtractor, IdentityP
         int $maxAge = 3600 * 24 * 7,
         bool $secure = false,
         bool $httpOnly = true,
-        string $sameSite = 'strict'
+        string $sameSite = 'strict',
+        string $path = '/'
     ) {
         $this->tokenStore = $tokenStore;
         $this->cookieName = $cookieName;
@@ -60,6 +62,7 @@ final class RememberTokenAuthenticator implements CredentialExtractor, IdentityP
         $this->secure = $secure;
         $this->httpOnly = $httpOnly;
         $this->sameSite = $sameSite;
+        $this->path = $path;
     }
 
     /**
@@ -131,7 +134,7 @@ final class RememberTokenAuthenticator implements CredentialExtractor, IdentityP
             $tokenInfo = new ClientRememberToken($token->getId(), $validator);
 
             $setCookie = SetCookie::create($this->cookieName, $tokenInfo->toString())
-                ->withPath('/')
+                ->withPath($this->path)
                 ->withMaxAge($this->maxAge)
                 ->withSameSite(SameSite::fromString($this->sameSite))
                 ->withHttpOnly($this->httpOnly)
